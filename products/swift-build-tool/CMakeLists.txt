@@ -10,7 +10,7 @@ target_link_libraries(swift-build-tool PRIVATE
 
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
   target_link_libraries(swift-build-tool PRIVATE
-    curses)
+    ncurses)
 endif()
 
 install(TARGETS swift-build-tool

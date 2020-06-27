@@ -8,6 +8,6 @@ target_link_libraries(CASTests PRIVATE
 
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
   target_link_libraries(CASTests PRIVATE
-    curses)
+    ncurses)
 endif()
 

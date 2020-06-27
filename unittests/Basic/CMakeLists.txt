@@ -14,5 +14,5 @@ target_link_libraries(BasicTests PRIVATE
 
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
   target_link_libraries(BasicTests PRIVATE
-    curses)
+    ncurses)
 endif()
