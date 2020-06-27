@@ -28,7 +28,7 @@ endif()
 
 if(NOT CMAKE_SYSTEM_NAME STREQUAL Windows)
   target_link_libraries(libllbuild PRIVATE
-    curses)
+    ncurses)
 endif()
 
 target_include_directories(libllbuild
@@ -86,7 +86,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
     llbuildBasic
     llvmSupport
     SQLite::SQLite3
-    curses)
+    ncurses)
 
   # Manually set up the remaining framework structure.
   set(LLBUILD_FW_INPUTS)

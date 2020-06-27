@@ -33,7 +33,7 @@ target_link_libraries(XcodePerfTests PRIVATE
   llbuildNinja
   llbuildBuildSystem
   llbuildCommands
-  curses
+  ncurses
   SQLite::SQLite3
   "${MACOSX_SDK_PATH}/System/Library/Frameworks/Foundation.framework"
   "${MACOSX_PLATFORM_PATH}/Developer/Library/Frameworks/XCTest.framework"
