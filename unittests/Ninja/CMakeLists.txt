@@ -8,5 +8,5 @@ target_link_libraries(NinjaTests PRIVATE
 
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
   target_link_libraries(NinjaTests PRIVATE
-    curses)
+    ncurses)
 endif()

@@ -15,6 +15,6 @@ target_link_libraries(CoreTests PRIVATE
 
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
   target_link_libraries(CoreTests PRIVATE
-    curses)
+    ncurses)
 endif()
 

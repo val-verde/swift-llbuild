@@ -15,5 +15,5 @@ target_link_libraries(CAPITests PRIVATE
 
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
   target_link_libraries(CAPITests PRIVATE
-    curses)
+    ncurses)
 endif()

@@ -16,5 +16,5 @@ endif()
 
 if(NOT ${CMAKE_SYSTEM_NAME} STREQUAL "Windows")
   target_link_libraries(llbuild PRIVATE
-    curses)
+    ncurses)
 endif()
