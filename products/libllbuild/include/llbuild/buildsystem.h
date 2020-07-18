@@ -33,7 +33,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#ifdef _MSC_VER
+#ifdef _WIN32
 // Ignore the conflicting min/max defined in windows.h
 #define NOMINMAX
 #define WIN32_LEAN_AND_MEAN
