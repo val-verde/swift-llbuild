@@ -389,7 +389,7 @@ sys::ModuleTraits<>::Handle sys::OpenLibrary(const char *path) {
 void *sys::GetSymbolByname(sys::ModuleTraits<>::Handle handle,
                            const char *name) {
 #if defined(_WIN32)
-  return GetProcAddress(handle, name);
+  return (void *)GetProcAddress(handle, name);
 #else
   return dlsym(handle, name);
 #endif
