@@ -22,7 +22,7 @@ target_link_libraries(libllbuild PRIVATE
 
 set_property(GLOBAL APPEND PROPERTY LLBuild_EXPORTS libllbuild)
 
-if(CMAKE_SYSTEM_NAME STREQUAL Windows)
+if(MSVC)
     set_target_properties(libllbuild PROPERTIES LINK_FLAGS "/INCREMENTAL:NO")
 endif()
 
