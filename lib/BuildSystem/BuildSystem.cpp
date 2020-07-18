@@ -55,7 +55,7 @@
 #include <sstream>
 
 #ifdef _WIN32
-#include <Shlwapi.h>
+#include <shlwapi.h>
 #else
 #include <limits.h>
 #include <fnmatch.h>
