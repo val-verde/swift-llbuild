@@ -15,7 +15,7 @@
 
 #if defined(_WIN32)
 #include "LeanWindows.h"
-#include <Shlwapi.h>
+#include <shlwapi.h>
 #include <direct.h>
 #include <io.h>
 #include <time.h>
