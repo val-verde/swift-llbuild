@@ -87,7 +87,11 @@ let package = Package(
             path: "unittests/swift-Ninja"),
 
         // MARK: Components
-        
+        .systemLibrary(
+            name: "libsqlite3",
+            path: "libsqlite3",
+            pkgConfig: "sqlite3"),
+
         .target(
             name: "llbuildBasic",
             dependencies: ["llvmSupport"],
@@ -95,9 +99,8 @@ let package = Package(
         ),
         .target(
             name: "llbuildCore",
-            dependencies: ["llbuildBasic"],
-            path: "lib/Core",
-            linkerSettings: [.linkedLibrary("sqlite3")]
+            dependencies: ["libsqlite3", "llbuildBasic"],
+            path: "lib/Core"
         ),
         .target(
             name: "llbuildBuildSystem",
