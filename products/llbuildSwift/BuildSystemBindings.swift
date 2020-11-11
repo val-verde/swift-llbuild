@@ -419,7 +419,7 @@ public struct Command: Hashable, CustomStringConvertible, CustomDebugStringConve
         switch representation {
         case .handle(let handle):
             let name = llb_buildsystem_command_get_description(handle)!
-            defer { free(name) }
+            defer { name.deallocate() }
             return String(cString: name)
         case .values(let values):
             return values.description
@@ -431,7 +431,7 @@ public struct Command: Hashable, CustomStringConvertible, CustomDebugStringConve
         switch representation {
         case .handle(let handle):
             let name = llb_buildsystem_command_get_verbose_description(handle)!
-            defer { free(name) }
+            defer { name.deallocate() }
             return String(cString: name)
         case .values(let values):
             return values.verboseDescription
@@ -707,7 +707,7 @@ private final class CStyleEnvironment {
     }
 
     deinit {
-        bindings?.forEach{ free($0) }
+        bindings?.forEach{ $0.deallocate() }
     }
 }
 
