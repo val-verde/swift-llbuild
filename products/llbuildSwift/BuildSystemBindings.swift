@@ -419,7 +419,7 @@ public struct Command: Hashable, CustomStringConvertible, CustomDebugStringConve
         switch representation {
         case .handle(let handle):
             let name = llb_buildsystem_command_get_description(handle)!
-            defer { free(name) }
+            defer { name.deallocate() }
             return String(cString: name)
         case .values(let values):
             return values.description
@@ -431,7 +431,7 @@ public struct Command: Hashable, CustomStringConvertible, CustomDebugStringConve
         switch representation {
         case .handle(let handle):
             let name = llb_buildsystem_command_get_verbose_description(handle)!
-            defer { free(name) }
+            defer { name.deallocate() }
             return String(cString: name)
         case .values(let values):
             return values.verboseDescription
@@ -698,7 +698,7 @@ private final class CStyleEnvironment {
     }
 
     deinit {
-        bindings?.forEach{ free($0) }
+        bindings?.forEach{ $0.deallocate() }
     }
 }
 
@@ -732,13 +732,13 @@ public final class BuildSystem {
 
         // Create a stable C string path.
         let pathPtr = strdup(buildFile)
-        defer { free(pathPtr) }
+        defer { pathPtr?.deallocate() }
 
         let dbPathPtr = strdup(databaseFile)
-        defer { free(dbPathPtr) }
+        defer { dbPathPtr?.deallocate() }
 
         let tracePathPtr = strdup(traceFile ?? "")
-        defer { free(tracePathPtr) }
+        defer { tracePathPtr?.deallocate() }
 
         // Allocate a C style environment, if necessary.
         _cEnvironment = CStyleEnvironment(environment)
