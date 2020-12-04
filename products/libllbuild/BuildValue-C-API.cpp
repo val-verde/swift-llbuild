@@ -198,12 +198,13 @@ llb_build_value *_Nonnull llb_build_value_make_successful_command(const llb_buil
   return reinterpret_cast<llb_build_value *>(new CAPIBuildValue(BuildValue::makeSuccessfulCommand(ArrayRef<basic::FileInfo>(info.data(), count_outputInfos))));
 }
 
-void llb_build_value_get_file_infos(llb_build_value *_Nonnull value, void *_Nullable context, void (*_Nonnull iterator)(void *_Nullable context, llb_build_value_file_info_t fileInfo)) {
+void llb_build_value_get_file_infos(llb_build_value *_Nonnull value, void *_Nullable context, void (*_Nonnull iterator)(void *_Nullable context, llb_build_value_file_info_t const *fileInfo)) {
   auto internalBuildValue = &((CAPIBuildValue *)value)->getInternalBuildValue();
   auto count = internalBuildValue->getNumOutputs();
   for (unsigned index = 0; index < count; index++) {
     auto fileInfo = internalBuildValue->getNthOutputInfo(index);
-    iterator(context, llbuild::capi::convertFileInfo(fileInfo));
+    auto convertedFileInfo = llbuild::capi::convertFileInfo(fileInfo);
+    iterator(context, &convertedFileInfo);
   }
 }
 

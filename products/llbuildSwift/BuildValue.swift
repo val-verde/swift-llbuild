@@ -332,7 +332,7 @@ public class BuildValue: CustomStringConvertible, Equatable, Hashable {
             var result: [FileInfo] = []
             withUnsafeMutablePointer(to: &result) { ptr in
                 llb_build_value_get_file_infos(internalBuildValue, ptr) { ctx, fileInfo in
-                    ctx!.assumingMemoryBound(to: [FileInfo].self).pointee.append(fileInfo)
+                    ctx!.assumingMemoryBound(to: [FileInfo].self).pointee.append(fileInfo.pointee)
                 }
             }
             return result
@@ -455,7 +455,7 @@ public class BuildValue: CustomStringConvertible, Equatable, Hashable {
             var result: [FileInfo] = []
             withUnsafeMutablePointer(to: &result) { ptr in
                 llb_build_value_get_file_infos(internalBuildValue, ptr) { ctx, fileInfo in
-                    ctx!.assumingMemoryBound(to: [FileInfo].self).pointee.append(fileInfo)
+                    ctx!.assumingMemoryBound(to: [FileInfo].self).pointee.append(fileInfo.pointee)
                 }
             }
             return result
