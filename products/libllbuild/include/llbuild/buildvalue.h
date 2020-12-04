@@ -145,7 +145,7 @@ LLBUILD_EXPORT llb_build_value * llb_build_value_make_failed_input();
 
 // Successful Command
 LLBUILD_EXPORT llb_build_value * llb_build_value_make_successful_command(const llb_build_value_file_info_t * outputInfos, int32_t count_outputInfos);
-LLBUILD_EXPORT void llb_build_value_get_file_infos(llb_build_value * value, void *_Nullable context, void (* iterator)(void *_Nullable context, llb_build_value_file_info_t fileInfo));
+LLBUILD_EXPORT void llb_build_value_get_file_infos(llb_build_value * value, void *_Nullable context, void (* iterator)(void *_Nullable context, llb_build_value_file_info_t const *fileInfo));
 
 // Failed Command
 LLBUILD_EXPORT llb_build_value * llb_build_value_make_failed_command();
