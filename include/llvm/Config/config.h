@@ -14,7 +14,7 @@
 #define ENABLE_CRASH_OVERRIDES 1
 
 /* Define to 1 if you have the `backtrace' function. */
-#if !defined(__ANDROID__)
+#if !defined(__ANDROID__) && !(defined(__linux__) && !defined(__GLIBC__))
 #define HAVE_BACKTRACE TRUE
 #endif
 
@@ -110,7 +110,7 @@
 #define HAVE_LIBPTHREAD 1
 
 /* Define to 1 if you have the `pthread_getname_np' function. */
-#if !defined(__ANDROID__)
+#if !defined(__ANDROID__) && !(defined(__linux__) && !defined(__GLIBC__))
 #define HAVE_PTHREAD_GETNAME_NP 1
 #endif
 
