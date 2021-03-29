@@ -10,6 +10,7 @@
 #ifndef LLVM_DEMANGLE_DEMANGLE_H
 #define LLVM_DEMANGLE_DEMANGLE_H
 
+#include <stdlib.h>
 #include <cstddef>
 
 namespace llvm {

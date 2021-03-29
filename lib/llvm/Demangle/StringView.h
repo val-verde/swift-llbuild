@@ -13,6 +13,7 @@
 #ifndef LLVM_DEMANGLE_STRINGVIEW_H
 #define LLVM_DEMANGLE_STRINGVIEW_H
 
+#include <stdlib.h>
 #include <algorithm>
 #include <cassert>
 #include <cstring>
