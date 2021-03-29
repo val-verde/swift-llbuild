@@ -14,6 +14,7 @@
 #ifndef LLVM_SUPPORT_MANAGEDSTATIC_H
 #define LLVM_SUPPORT_MANAGEDSTATIC_H
 
+#include <stdlib.h>
 #include <atomic>
 #include <cstddef>
 

@@ -17,6 +17,7 @@
 #define LLVM_SUPPORT_VALGRIND_H
 
 #include <cstddef>
+#include <stdlib.h>
 
 namespace llvm {
 namespace sys {

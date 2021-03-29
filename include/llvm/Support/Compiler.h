@@ -19,6 +19,7 @@
 
 #include <new>
 #include <stddef.h>
+#include <stdlib.h>
 
 #if defined(_MSC_VER)
 #include <sal.h>
